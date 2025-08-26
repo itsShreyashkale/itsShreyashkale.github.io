@@ -1,10 +1,8 @@
 /* ===== Global Styles ===== */
 
 .container {
-  width: 100%;   /* Full width on all devices */
-  max-width: 1200px;  /* Optional: keeps it from being too wide on large screens */
-  margin: 0 auto;
-  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* For images */
@@ -12,6 +10,27 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+.item {
+  flex: 1 1 300px;  /* grows, shrinks, minimum 300px */
+}
+
+
+p, span {
+  word-wrap: break-word;
+}
+
+/* For tables */
+table {
+  width: 100%;
+  table-layout: auto;
+}
+
+.some-element {
+  width: 100%;       /* instead of 800px */
+  max-width: 800px;  /* optional */
+}
+
 
 * {
   margin: 0;
@@ -270,6 +289,10 @@ footer {
   .skills-grid {
     flex-direction: column;
     align-items: center;
+  }
+
+   .container {
+    padding: 10px;
   }
 }
 
