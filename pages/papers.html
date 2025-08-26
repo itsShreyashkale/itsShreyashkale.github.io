@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Papers/Publication - My Portfolio</title>
+  <style>
+    /* === Global Styles === */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #222;
+      padding: 15px 20px;
+      text-align: left;
+    }
+    header a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    header a:hover {
+      color: #ff9800;
+    }
+
+    /* === Section Styles === */
+    .news {
+      text-align: center;
+      padding: 40px 20px;
+      background: linear-gradient(120deg, #ff9800, #ff5722);
+      color: white;
+    }
+    .news h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    .papers {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .paper-card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+      width: 300px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .paper-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+    }
+    .paper-card h2 {
+      margin-top: 0;
+      color: #ff5722;
+    }
+    .paper-card p {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .paper-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 14px;
+      background: #ff5722;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 14px;
+      transition: background 0.3s ease;
+    }
+    .paper-card a:hover {
+      background: #e64a19;
+    }
+
+    /* === Footer === */
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #222;
+      color: #aaa;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="/index.html">← Back to Home</a>
+    </nav>
+  </header>
+
+  <section class="news">
+    <h1>📄 Publications / Papers</h1>
+  </section>
+
+  <section class="papers">
+    <!-- Paper 1 -->
+    <div class="paper-card">
+      <h2>IJCRT</h2>
+      <p><strong>Title:</strong> Traffic Sign Detection using Learning Technique</p>
+      <p>This paper discusses a machine learning-based approach for traffic sign detection to improve autonomous driving systems.</p>
+      <a href="https://drive.google.com/file/d/1dUw8u4f5i61TiLVgCMYtAoPIWeR2WdVo/view?usp=sharing" target="_blank">Certification</a>
+    </div>
+
+    <!-- Paper 2 -->
+    <div class="paper-card">
+      <h2>IEEE</h2>
+      <p><strong>Title:</strong> A Survey: Traffic Sign Recognition System using Learning Techniques</p>
+      <p>An IEEE-published research work focused on computer vision methods for real-time traffic sign recognition in smart transport networks.</p>
+      <a href="https://ieeexplore.ieee.org/document/10911592" target="_blank">Read More</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 My Portfolio | All Rights Reserved
+  </footer>
+
+  <script>
+    // Simple interactive effect
+    document.querySelectorAll('.paper-card a').forEach(btn => {
+      btn.addEventListener('click', function() {
+        alert("Opening paper: " + this.parentElement.querySelector('h2').innerText);
+      });
+    });
+  </script>
+</body>
+</html>
