@@ -1,199 +1,249 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ShreyashKale_Portfolio</title>
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<!doctype html>
+<html lang="en" data-theme="system">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shreyash Kale — Portfolio</title>
+    <meta name="description" content="Shreyash Kale — Computer Engineer & MERN developer. Projects, experience, publications, and contact." />
+    <meta name="theme-color" content="#0f172a" />
 
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">MyPortfolio</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="pages/news.html">News</a></li>
-        <li><a href="https://shreyashkale.hashnode.dev/">Blog</a></li>
-        <li><a href="pages/papers.html">Papers</a></li>
-        <li><a href="https://www.credly.com/users/shreyash-kale.7f2ae24a">Badges</a></li>
-        <li><a href="pages/contact.html">Contact</a></li>
-        <li><a href="https://drive.google.com/drive/folders/1dti8-9OVS8R2UwtMIeNUrh4g3C7afctv?usp=sharing">CV</a></li>
-      </ul>
-      <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-    </nav>
-  </header>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:FILL@1" rel="stylesheet" />
 
-  <!-- Home Section -->
-  <section id="home" class="home">
-    <div class="home-container">
-      <div class="profile-pic">
-        <img src="public/shrey.jpg" alt="Profile Picture">
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Top App Bar -->
+    <header class="appbar elevation-2">
+      <div class="container appbar-row">
+        <a class="brand" href="#home" aria-label="Home">
+          <span class="logo-dot"></span>
+          <span class="brand-text">Shreyash</span>
+        </a>
+
+        <nav class="nav" id="nav">
+          <a href="#about" class="nav-link">About</a>
+          <a href="#education" class="nav-link">Education</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#extras" class="nav-link">Extras</a>
+          <a href="#contact" class="nav-link">Contact</a>
+          <!-- External pages you already had -->
+          <a href="pages/news.html" class="nav-link">News</a>
+          <a href="pages/blog.html" class="nav-link">Blogs</a>
+          <a href="pages/papers.html" class="nav-link">Papers</a>
+          <a href="https://drive.google.com/drive/folders/1dti8-9OVS8R2UwtMIeNUrh4g3C7afctv?usp=sharing" class="nav-link" target="_blank" rel="noopener">Resume</a>
+        </nav>
+
+        <div class="actions">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+            <span class="material-symbols-rounded">dark_mode</span>
+          </button>
+          <button class="icon-btn hide-desktop" id="menuToggle" aria-label="Toggle menu">
+            <span class="material-symbols-rounded">menu</span>
+          </button>
+        </div>
       </div>
-      <div class="home-content">
-        <h1>Hello, I'm <span class="highlight">Shreyash</span></h1>
-        
-        <p>I am a passionate Computer Engineer aspiring to become a Software Developer, with a strong foundation in algorithms, operating systems, databases, and software development. 
-            My interests are rooted in backend and full-stack development, where I enjoy building practical and scalable solutions. I have gained hands-on experience through academic projects, research publications, and industry-recognized certifications, which have strengthened both my technical and problem-solving skills. 
-            Beyond this, I am deeply curious about emerging fields like Machine Learning, Deep Learning, and Natural Language Processing, and I am eager to explore how these technologies can shape the future of software and intelligent systems.</p>  
-    </div>
-    </div>
-  </section>
+    </header>
 
-  <!-- Education Section -->
-  <section id="education" class="section">
-    <h2 class="section-title">Education</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>Bachelor of Engineering</h3>
-        <p>Computer Engineering</p>
+    <!-- Hero -->
+    <section id="home" class="hero container">
+      <div class="hero-left">
+        <h1 class="headline reveal">
+          Hey there, I’m <span class="accent">Shreyash Kale</span>
+        </h1>
+        <p class="subhead reveal delay-1">
+          Passionate Computer Engineer aspiring to be a Software Developer. Strong foundations in Algorithms, OS, Databases, and Full-stack (MERN). Curious about AI/ML, Deep Learning, and NLP.
+        </p>
+        <div class="cta-row reveal delay-2">
+          <a href="#about" class="btn primary">Explore More</a>
+          <a href="#contact" class="btn">Contact</a>
+        </div>
+        <div class="socials reveal delay-3" aria-label="Social links">
+          <a class="chip" href="https://github.com/itsShreyashkale" target="_blank" rel="noopener">
+            <span class="material-symbols-rounded">code</span> GitHub
+          </a>
+          <a class="chip" href="https://www.linkedin.com/in/shreyash-kale-204b0a228/" target="_blank" rel="noopener">
+            <span class="material-symbols-rounded">handshake</span> LinkedIn
+          </a>
+          <a class="chip" href="https://shreyashkale.hashnode.dev" target="_blank" rel="noopener">
+            <span class="material-symbols-rounded">article</span> Hashnode
+          </a>
+          <a class="chip" href="https://www.instagram.com/shreyashkale_/" target="_blank" rel="noopener">
+            <span class="material-symbols-rounded">share</span> Instagram
+          </a>
+          <!-- Optional: replace your-username if you have a Credly profile -->
+          <a class="chip" href="https://www.credly.com/users/your-username/badges" target="_blank" rel="noopener">
+            <span class="material-symbols-rounded">workspace_premium</span> Credly
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-right reveal delay-2">
+        <div class="avatar elevation-3">
+          <img src="public/shrey.jpg" alt="Portrait of Shreyash Kale" />
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section container">
+      <h2 class="section-title reveal">About</h2>
+      <div class="card grid-2 elevation-1 reveal delay-1">
+        <p>
+          I have gained hands-on experience through academic projects, research publications, and certifications that strengthened my technical and problem-solving skills. Beyond academics, I’ve published research papers, participated in hackathons, volunteered, and served in NCC. Always eager to learn and grow, I aim to contribute to the future of intelligent systems.
+        </p>
+        <ul class="bullets">
+          <li>Full-stack: React, Node.js, Express, MongoDB</li>
+          <li>CS Core: DSA, OS, DBMS, Networks</li>
+          <li>Interests: AI/ML, DL, NLP</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section container">
+      <h2 class="section-title reveal">Education</h2>
+      <article class="edu-card elevation-2 reveal delay-1">
+        <div class="edu-header">
+          <h3>Bachelor of Engineering — Computer Engineering</h3>
+          <span class="pill">2021 – 2025</span>
+        </div>
         <p>Pune University</p>
-        <p>2021 - 2025</p>
-      </div>
-    </div>
-  </section>
+      </article>
+    </section>
 
-  <!-- Experience Section -->
-  <section id="experience" class="section">
-    <h2 class="section-title">Experience</h2>
-    <div class="card-container">
-      <div class="card">
-        <h3>Intern - full stack</h3>
-        <p>>> Solar Secure Solutions | Jan 2024 - Mar 2024</p>
-        <ul>
-          <li>Developed Gas Utility Website, using Html, CSS, JavaScript for frontend and Node.js and Express.js for
-            backend, ensuring fast and error-free performance.</li>
-          <li>Enhance User Engagement by implementing responsive designs and optimizing performance for better accessibility.</li>
+    <!-- Experience -->
+    <section id="experience" class="section container">
+      <h2 class="section-title reveal">Experience</h2>
+
+      <article class="exp-card elevation-2 reveal delay-1">
+        <div class="exp-head">
+          <h3>Intern — Full Stack</h3>
+          <span class="pill">Jan 2024 – Mar 2024</span>
+        </div>
+        <p class="muted">Solar Secure Solutions (MSME, Govt. of India) — Remote</p>
+        <ul class="bullets">
+          <li>Worked on live modules for website design, rebuilding, testing, and debugging.</li>
+          <li>Used HTML, CSS, JavaScript, and Node.js to deliver tasks on time; received “Good” performance rating.</li>
         </ul>
-      </div>
+      </article>
 
-      <div class="card">
-        <h3>Teaching - Assist(cs concepts)</h3>
-        <p>>> Shivaji Institues | Jun 2024 - Jul 2024</p>
-        <ul>
-          <li>Supervised class of ~70 high school students. Provided one-on-one mentoring and support to students,
-            addressing their individual learning needs, and improving their foundational understanding of computer
-            systems and basic coding principles.</li>
+      <article class="exp-card elevation-2 reveal delay-2">
+        <div class="exp-head">
+          <h3>Teaching Assistant — Computer Science</h3>
+          <span class="pill">Jun 2024 – Jul 2024</span>
+        </div>
+        <p class="muted">Shivaji Institutes</p>
+        <ul class="bullets">
+          <li>Supervised a class of ~70 high-school students.</li>
+          <li>Provided 1-on-1 mentoring to address individual learning needs.</li>
+          <li>Improved foundational understanding of computer systems and basic coding.</li>
         </ul>
+      </article>
+    </section>
+
+    <!-- Extras / Activities -->
+    <section id="extras" class="section container">
+      <h2 class="section-title reveal">Extra Activities</h2>
+      <div class="card elevation-1 reveal delay-1">
+        <ul class="bullets two-col">
+          <li>Published Papers on IEEE and IJCRT</li>
+          <li>Published Blogs</li>
+          <li>Classical Music Certification — Level 2</li>
+          <li>Classical Tabla Certification — Level 2</li>
+          <li>National Level Techfest — Codex Hackathon</li>
+          <li>National Project Competition — Convene 2025</li>
+          <li>Volunteering, Prayas Youth Forum (tree planting, fort cleaning…)</li>
+          <li>Volunteering, E-cell (teamwork, event planning, organizing)</li>
+          <li>NCC (11 MAH BN) — 2 years + 10-day training camp</li>
+        </ul>
+        <div class="cta-row">
+          <a class="btn" href="pages/news.html">News & Updates</a>
+          <a class="btn outlined" href="pages/papers.html">Publications</a>
+        </div>
+      </div>
+    </section>
+
+<!-- Contact -->
+<section id="contact" class="section container">
+  <h2 class="section-title reveal">Contact Me</h2>
+
+  <div class="card elevation-2 contact-wrapper reveal delay-1">
+    <form id="contact-form" class="contact-form">
+      <div class="form-group">
+        <input type="text" id="name" name="from_name" placeholder="Your Name" required />
+      </div>
+      <div class="form-group">
+        <input type="email" id="email" name="from_email" placeholder="Your Email" required />
+      </div>
+      <div class="form-group">
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+      </div>
+      <button type="submit" class="btn primary">
+        <span class="material-symbols-rounded">send</span>
+        Send Message
+      </button>
+    </form>
+
+    <div class="contact-info">
+      <p class="muted">Let's collaborate, discuss projects, or just say hi 👋</p>
+
+      <a class="chip large" href="mailto:shreyashakale999@gmail.com">
+        <span class="material-symbols-rounded">mail</span>
+        shreyashakale999@gmail.com
+      </a>
+
+      <div class="chips">
+        <span class="chip"><span class="material-symbols-rounded">person</span> Shreyash Kale</span>
+        <span class="chip"><span class="material-symbols-rounded">location_on</span> India</span>
+      </div>
+
+      <div class="socials">
+        <a href="https://github.com/itsShreyashkale" target="_blank" rel="noopener" class="icon-btn">
+          <span class="material-symbols-rounded">code</span>
+        </a>
+        <a href="https://www.linkedin.com/in/shreyash-kale-204b0a228/" target="_blank" rel="noopener" class="icon-btn">
+          <span class="material-symbols-rounded">handshake</span>
+        </a>
+        <a href="https://shreyashkale.hashnode.dev" target="_blank" rel="noopener" class="icon-btn">
+          <span class="material-symbols-rounded">article</span>
+        </a>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="section">
-    <h2 class="section-title">Projects</h2>
-    <p>checkout gihub</p>
-    <div class="card-container">
-      
-      <div class="card">
-        <h3>Gas_Utility</h3>    
-      </div>
-      
-      <div class="card">
-        <h3>Django Based E-commerce Website</h3>
-      </div>
 
-      <div class="card">
-        <h3>Flappy Bird</h3>
+    <footer class="footer">
+      <div class="container footer-row">
+        <p>© <span id="year"></span> Shreyash Kale</p>
+        <div class="socials">
+          <a class="chip" href="https://github.com/itsShreyashkale" target="_blank" rel="noopener">
+            <span class="material-symbols-rounded">code</span> GitHub
+          </a>
+          <a class="chip" href="https://www.linkedin.com/in/shreyash-kale-204b0a228/" target="_blank" rel="noopener">
+            <span class="material-symbols-rounded">handshake</span> LinkedIn
+          </a>
+          <a class="chip" href="https://www.instagram.com/shreyashkale_/" target="_blank" rel="noopener">
+            <span class="material-symbols-rounded">share</span> Instagram
+          </a>
+        </div>
+        <button class="chip" id="scrollTop">
+          <span class="material-symbols-rounded">arrow_upward</span> Back to top
+        </button>
       </div>
+    </footer>
 
-      <div class="card">
-        <h3>Flask Based Greyscale Converter</h3>
-      </div>
-    
-    </div>
-  </section>
+    <!-- EmailJS (keys from your current site) -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      (function(){ emailjs.init("chQiIda2iCk69nh8R"); })();
+    </script>
 
-  <!-- Skills Section -->
-  <section id="skills" class="section">
-    <h2 class="section-title">Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card"><i class="fa-brands fa-python"></i> Python</div>
-      <div class="skill-card"><i class="fa-brands fa-js"></i> JavaScript</div>
-      <div class="skill-card"><i class="fa-brands fa-c"></i> C++</div>
-      <div class="skill-card"><i class="fa-solid fa-database"></i> MySQL</div>
-      <div class="skill-card"><i class="fa-brands fa-html5"></i> HTML</div>
-      <div class="skill-card"><i class="fa-brands fa-css3"></i> CSS</div>
-      <div class="skill-card"><i class="fa-brands fa-html5"></i> HTML</div>
-      <div class="skill-card"><i class="fa-brands fa-python"></i> Django</div>
-      <div class="skill-card"><i class="fa-solid fa-flask"></i> Flask</div>
-      <div class="skill-card"><i class="fa-brands fa-node-js"></i> Node.js</div>
-      <div class="skill-card"><i class="fa-brands fa-node-js"></i> Express</div>
-      <div class="skill-card"><i class="fa-brand fa-telegram"></i> Postman</div>
-    </div>
-  </section>
-
-  <!--Certification section-->
-  <section id="certifications" class="section">
-    <h2 class="section-title">Certifications</h2>
-    <div class="skills-grid">
-    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/2PU2KKNSEQ92" target="_blank"> 
-        <div class="skill-card"><i class="fa-brands fa-google"></i> Google IT Support</div>
-    </a> 
-
-    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/R88MPH5K5WJK" target="_blank">   
-      <div class="skill-card"><i class="fa-brands fa-meta"></i> Meta Back-end Developer</div>
-    </a> 
-
-    <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/186N86X1I97R" target="_blank">   
-      <div class="skill-card"><i class="fa-brands fa-code"></i> IBM Full Stack Developer</div>
-    </a>    
-    </div>
-  </section>
-
-  <!-- Activities Section -->
-  <section id="activities" class="section">
-    <h2 class="section-title">Activities</h2>
-    <div class="card-container">
-      <div class="card">
-        <p>Published IEEE Research Paper.</p>
-      </div>
-      <div class="card">
-        <p>German Language Certification Level A1 and A2.</p>
-      </div>
-      <div class="card">
-        <p>Classical Music Level 2 of Certification.</p>
-      </div>
-      <div class="card">
-        <p>Classical Tabla Level 2 of Certification.</p>
-      </div>
-      <div class="card">
-        <p>National Level Techfest Codex Hackathon.</p>
-      </div>
-      <div class="card">
-        <p>National Project Competition Convene 2025.</p>
-      </div>
-      <div class="card">
-        <p>Volunteering, Prayas Youth Forum: Tree Planting, Fort Cleaning and more.</p>
-      </div>
-      <div class="card">
-        <p>Volunteering, E-cell: Teamwork, Event Planning, Managing and Organizing.</p>
-      </div>
-      <div class="card">
-        <p>Served in NCC (11 MAH BN) for 2 years during school, including participation in a 10-day training camp
-          focused on discipline, leadership, and physical endurance.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-icons">
-      <a href="https://www.instagram.com/shreyashkale_/?next=%2F"><i class="fab fa-instagram"></i></a>
-      <a href="https://github.com/itsShreyashkale"><i class="fab fa-github"></i></a>
-      <a href="https://www.linkedin.com/in/shreyash-kale-204b0a228/"><i class="fab fa-linkedin"></i></a>
-    </div>
-    <p>&copy; 2025 Your Name. All Rights Reserved.</p>
-    <a href="#home" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
-  </footer>
-
-  <!-- Script -->
-  <script src="script.js"></script>
-</body>
+    <!-- Scripts -->
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,88 +1,74 @@
-// ---------- Navbar Toggle ----------
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+// Elements
+const themeToggle = document.getElementById('themeToggle');
+const menuToggle  = document.getElementById('menuToggle');
+const nav         = document.getElementById('nav');
+const yearEl      = document.getElementById('year');
+const scrollTopBtn= document.getElementById('scrollTop');
 
-menuToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('active');
-  menuToggle.querySelector('i').classList.toggle('fa-bars');
-  menuToggle.querySelector('i').classList.toggle('fa-xmark');
+// Year
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+// Restore theme choice
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+
+// Toggle theme: cycle dark -> light -> system
+themeToggle?.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme') || 'system';
+  const next = current === 'dark' ? 'light' : current === 'light' ? 'system' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  themeToggle.querySelector('.material-symbols-rounded').textContent =
+    next === 'dark' ? 'light_mode' : 'dark_mode';
 });
 
-// ---------- Back to Top ----------
-const backToTop = document.querySelector('.back-to-top');
-
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) {
-    backToTop.style.display = 'block';
-  } else {
-    backToTop.style.display = 'none';
-  }
+// Mobile menu
+menuToggle?.addEventListener('click', () => {
+  nav.classList.toggle('open');
 });
+nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
 
-// Smooth scroll for back to top
-backToTop.addEventListener('click', (e) => {
-  e.preventDefault();
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
-});
-
-// ---------- Active Navbar Highlight ----------
-const sections = document.querySelectorAll("section");
-const navLi = document.querySelectorAll(".nav-links li a");
-
-window.addEventListener("scroll", () => {
-  let current = "";
-
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop - 80;
-    const sectionHeight = section.clientHeight;
-    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLi.forEach(link => {
-    link.classList.remove("active");
-    if (link.getAttribute("href").includes(current)) {
-      link.classList.add("active");
+// Smooth scroll for in-page anchors
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', e => {
+    const id = anchor.getAttribute('href');
+    if (id && id.length > 1) {
+      e.preventDefault();
+      document.querySelector(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 });
 
-// ---------- Scroll Reveal Animations ----------
-const revealElements = document.querySelectorAll(".card, .skill-card, .section-title, .home-content, .profile-pic");
+// Back to top
+scrollTopBtn?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-function revealOnScroll() {
-  const triggerBottom = window.innerHeight * 0.85;
+// Reveal on scroll
+const io = new IntersectionObserver(
+  entries => entries.forEach(e => e.isIntersecting && e.target.classList.add('show')),
+  { threshold: 0.12 }
+);
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
-  revealElements.forEach(el => {
-    const elTop = el.getBoundingClientRect().top;
-    if (elTop < triggerBottom) {
-      el.classList.add("show");
-    }
+// EmailJS form (uses your existing keys)
+const contactForm = document.getElementById("contact-form");
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const params = {
+      from_name: document.getElementById("name").value,
+      from_email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+    };
+    // Reuse your service/template IDs
+    emailjs
+      .send("service_801dtwn", "template_gg9ee3o", params)
+      .then(() => {
+        alert("✅ Message sent successfully!");
+        contactForm.reset();
+      })
+      .catch((error) => {
+        console.error("❌ Error:", error);
+        alert("Failed to send message. Please try again later.");
+      });
   });
 }
-
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
-
-// ---------- Add Animation Styles ----------
-const style = document.createElement("style");
-style.innerHTML = `
-  .card, .skill-card, .section-title, .home-content, .profile-pic {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease;
-  }
-  .card.show, .skill-card.show, .section-title.show, .home-content.show, .profile-pic.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  .nav-links li a.active {
-    color: #38bdf8;
-    border-bottom: 2px solid #38bdf8;
-  }
-`;
-document.head.appendChild(style);

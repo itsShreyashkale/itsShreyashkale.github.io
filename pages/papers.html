@@ -1,136 +1,88 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Papers/Publication - My Portfolio</title>
-  <style>
-    /* === Global Styles === */
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #222;
-      padding: 15px 20px;
-      text-align: left;
-    }
-    header a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 16px;
-    }
-    header a:hover {
-      color: #ff9800;
-    }
+<!doctype html>
+<html lang="en" data-theme="system">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Publications — Shreyash Kale</title>
+    <meta name="description" content="Research papers and publications by Shreyash Kale." />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:FILL@1" rel="stylesheet" />
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <!-- App Bar -->
+    <header class="appbar elevation-2">
+      <div class="container appbar-row">
+        <a class="brand" href="../index.html" aria-label="Home">
+          <span class="logo-dot"></span>
+          <span class="brand-text">Shreyash</span>
+        </a>
+        <nav class="nav" id="nav">
+          <a href="../index.html#about" class="nav-link">About</a>
+          <a href="../index.html#education" class="nav-link">Education</a>
+          <a href="../index.html#experience" class="nav-link">Experience</a>
+          <a href="../index.html#extras" class="nav-link">Extras</a>
+          <a href="../index.html#contact" class="nav-link">Contact</a>
+          <a href="news.html" class="nav-link">News</a>
+          <a href="blog.html" class="nav-link">Blogs</a>
+        </nav>
+        <div class="actions">
+          <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+            <span class="material-symbols-rounded">dark_mode</span>
+          </button>
+          <button class="icon-btn hide-desktop" id="menuToggle" aria-label="Toggle menu">
+            <span class="material-symbols-rounded">menu</span>
+          </button>
+        </div>
+      </div>
+    </header>
 
-    /* === Section Styles === */
-    .news {
-      text-align: center;
-      padding: 40px 20px;
-      background: linear-gradient(120deg, #ff9800, #ff5722);
-      color: white;
-    }
-    .news h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
+    <!-- Hero -->
+    <section class="section container">
+      <h1 class="section-title reveal">📄 Publications / Papers</h1>
+      <p class="muted reveal delay-1">Peer-reviewed work and certifications.</p>
+    </section>
 
-    .papers {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      padding: 40px 20px;
-    }
+    <!-- Papers -->
+    <section class="section container">
+      <div class="projects-grid reveal delay-1">
+        <article class="project-card elevation-2">
+          <div class="project-media skeleton"></div>
+          <div class="project-body">
+            <h3>IJCRT</h3>
+            <p><strong>Title:</strong> Traffic Sign Detection using Learning Technique</p>
+            <p>This paper discusses a machine learning-based approach for traffic sign detection to improve autonomous driving systems.</p>
+            <div class="project-cta">
+              <a class="btn small" href="https://drive.google.com/file/d/1dUw8u4f5i61TiLVgCMYtAoPIWeR2WdVo/view?usp=sharing" target="_blank" rel="noopener">Certification</a>
+            </div>
+          </div>
+        </article>
 
-    .paper-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
-      width: 300px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .paper-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
-    }
-    .paper-card h2 {
-      margin-top: 0;
-      color: #ff5722;
-    }
-    .paper-card p {
-      font-size: 14px;
-      line-height: 1.5;
-    }
-    .paper-card a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 8px 14px;
-      background: #ff5722;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 14px;
-      transition: background 0.3s ease;
-    }
-    .paper-card a:hover {
-      background: #e64a19;
-    }
+        <article class="project-card elevation-2">
+          <div class="project-media skeleton"></div>
+          <div class="project-body">
+            <h3>IEEE</h3>
+            <p><strong>Title:</strong> A Survey: Traffic Sign Recognition System using Learning Techniques</p>
+            <p>Research on computer-vision methods for real-time traffic sign recognition in smart transport networks.</p>
+            <div class="project-cta">
+              <a class="btn small" href="https://ieeexplore.ieee.org/document/10911592" target="_blank" rel="noopener">Read More</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    /* === Footer === */
-    footer {
-      text-align: center;
-      padding: 15px;
-      background: #222;
-      color: #aaa;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav class="navbar">
-      <a href="/index.html">← Back to Home</a>
-    </nav>
-  </header>
+    <footer class="footer">
+      <div class="container footer-row">
+        <p>© <span id="year"></span> Shreyash Kale</p>
+        <div class="socials">
+          <a class="chip" href="https://github.com/itsShreyashkale" target="_blank" rel="noopener"><span class="material-symbols-rounded">code</span> GitHub</a>
+          <a class="chip" href="https://www.linkedin.com/in/shreyash-kale-204b0a228/" target="_blank" rel="noopener"><span class="material-symbols-rounded">handshake</span> LinkedIn</a>
+        </div>
+      </div>
+    </footer>
 
-  <section class="news">
-    <h1>📄 Publications / Papers</h1>
-  </section>
-
-  <section class="papers">
-    <!-- Paper 1 -->
-    <div class="paper-card">
-      <h2>IJCRT</h2>
-      <p><strong>Title:</strong> Traffic Sign Detection using Learning Technique</p>
-      <p>This paper discusses a machine learning-based approach for traffic sign detection to improve autonomous driving systems.</p>
-      <a href="https://drive.google.com/file/d/1dUw8u4f5i61TiLVgCMYtAoPIWeR2WdVo/view?usp=sharing" target="_blank">Certification</a>
-    </div>
-
-    <!-- Paper 2 -->
-    <div class="paper-card">
-      <h2>IEEE</h2>
-      <p><strong>Title:</strong> A Survey: Traffic Sign Recognition System using Learning Techniques</p>
-      <p>An IEEE-published research work focused on computer vision methods for real-time traffic sign recognition in smart transport networks.</p>
-      <a href="https://ieeexplore.ieee.org/document/10911592" target="_blank">Read More</a>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 My Portfolio | All Rights Reserved
-  </footer>
-
-  <script>
-    // Simple interactive effect
-    document.querySelectorAll('.paper-card a').forEach(btn => {
-      btn.addEventListener('click', function() {
-        alert("Opening paper: " + this.parentElement.querySelector('h2').innerText);
-      });
-    });
-  </script>
-</body>
+    <script src="../script.js"></script>
+  </body>
 </html>
